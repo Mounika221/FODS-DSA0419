@@ -1,0 +1,26 @@
+1. Scenario: You are working on a project that involves analyzing student performance data for a class of 32 students. The data is stored in a NumPy array named student_scores, where each row represents a student and each column represents a different subject. The subjects are arranged in the following order: Math, Science, English, and History. Your task is to calculate the average score for each subject and identify the subject with the highest average score.
+Question: How would you use NumPy arrays to calculate the average score for each subject and determine the subject with the highest average score? Assume 4x4 matrix that stores marks of each student in given order.
+
+import numpy as np
+
+student_scores = np.array([
+    [85, 78, 92, 88],  # Student 1
+    [75, 80, 85, 90],  # Student 2
+    [90, 88, 94, 85],  # Student 3
+    [88, 82, 87, 93]   # Student 4
+])
+average_scores = np.mean(student_scores, axis=0)
+
+highest_avg_index = np.argmax(average_scores)
+subjects = ["Math", "Science", "English", "History"]
+for i, subject in enumerate(subjects):
+    print(f"Average score in {subject}: {average_scores[i]:.2f}")
+
+print(f"Subject with the highest average score: {subjects[highest_avg_index]} with an average score of {average_scores[highest_avg_index]:.2f}")
+
+OUTPUT:-
+Average score in Math: 84.50
+Average score in Science: 82.00
+Average score in English: 89.50
+Average score in History: 89.00
+Subject with the highest average score: English with an average score of 89.50
