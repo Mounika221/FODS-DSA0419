@@ -1,0 +1,92 @@
+import string
+
+from collections import Counter
+
+# Function to process the text and calculate word frequency
+
+def calculate_word_frequency(file_path):
+
+    # Step 1: Read the text file
+
+    with open(file_path, 'r') as file:
+
+        text = file.read()
+
+    
+
+    # Step 2: Convert text to lowercase and remove punctuation
+
+    text = text.lower()  # Convert to lowercase
+
+    text = text.translate(str.maketrans('', '', string.punctuation))  # Remove punctuation
+
+    
+
+    # Step 3: Split the text into words
+
+    words = text.split()
+
+    
+
+    # Step 4: Calculate word frequency using Counter
+
+    word_count = Counter(words)
+
+    
+
+    # Step 5: Display the frequency distribution
+
+    for word, count in word_count.items():
+
+        print(f'{word}: {count}')
+
+
+
+# Example usage
+
+file_path = 'sample_text.txt'  # Replace with the path to your text file
+
+calculate_word_frequency(file_path)
+
+14. Scenario: You are a data analyst working for a company that sells products online. You have been tasked with analyzing the sales data for the past month. The data is stored in a Pandas data frame. 
+
+Question: Develop a code in python to find the frequency distribution of the ages of the customers who have made a purchase in the past month.
+
+
+
+import pandas as pd
+
+
+
+# Sample DataFrame representing customer sales data
+
+data = {
+
+    'CustomerID': [101, 102, 103, 104, 105, 106, 107, 108, 109, 110],
+
+    'Age': [25, 30, 22, 25, 30, 40, 22, 35, 30, 25],
+
+    'PurchaseAmount': [200, 150, 300, 450, 200, 500, 350, 600, 250, 400]
+
+}
+
+
+
+# Create DataFrame
+
+df = pd.DataFrame(data)
+
+
+
+# Step 1: Find the frequency distribution of customer ages
+
+age_frequency = df['Age'].value_counts()
+
+
+
+# Step 2: Display the frequency distribution
+
+print("Frequency distribution of customer ages:")
+
+print(age_frequency)
+
