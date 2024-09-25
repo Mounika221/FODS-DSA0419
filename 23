@@ -10,13 +10,11 @@ from sklearn.preprocessing import StandardScaler
 
 
 
-# Load the dataset (replace 'patient_data.csv' with your actual dataset file)
+
 
 data = pd.read_csv('patient_data.csv')
 
 
-
-# Assume the dataset has columns 'symptom1', 'symptom2', ..., 'symptomN', 'condition'
 
 X = data.drop('condition', axis=1)  # Features (symptoms)
 
@@ -24,13 +22,8 @@ y = data['condition']  # Target variable (0 or 1)
 
 
 
-# Split the dataset into training and testing sets
 
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-
-
-
-# Standardize the features
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, res
 
 scaler = StandardScaler()
 
@@ -40,7 +33,7 @@ X_test = scaler.transform(X_test)
 
 
 
-# Train the KNN classifier
+
 
 k = int(input("Enter the number of neighbors (k): "))
 
@@ -48,9 +41,6 @@ knn = KNeighborsClassifier(n_neighbors=k)
 
 knn.fit(X_train, y_train)
 
-
-
-# Input new patient features
 
 new_patient = []
 
@@ -64,19 +54,18 @@ for i in range(num_features):
 
 
 
-# Standardize the new patient's features
 
 new_patient_scaled = scaler.transform([new_patient])
 
 
 
-# Predict the condition for the new patient
+
 
 prediction = knn.predict(new_patient_scaled)
 
 
 
-# Output the prediction
+
 
 if prediction[0] == 1:
 
