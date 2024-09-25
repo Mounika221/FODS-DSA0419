@@ -4,7 +4,7 @@ import re
 
 
 
-# Sample customer reviews dataset
+
 
 reviews = [
 
@@ -22,41 +22,31 @@ reviews = [
 
 
 
-# Function to preprocess the text (lowercase, remove punctuation)
-
 def preprocess_text(text):
 
     text = text.lower()  # Convert to lowercase
 
     text = re.sub(r'[^\w\s]', '', text)  # Remove punctuation
 
-    return text
-
-
-
-# Preprocess all reviews
+    return 
 
 processed_reviews = [preprocess_text(review) for review in reviews]
 
 
 
-# Split reviews into individual words
+
 
 words = []
 
 for review in processed_reviews:
 
-    words.extend(review.split())
-
-
-
-# Calculate the frequency distribution of words
+    
 
 word_freq = Counter(words)
 
 
 
-# Display the word frequency distribution
+
 
 print("Word Frequency Distribution:")
 
