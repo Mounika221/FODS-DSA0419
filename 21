@@ -6,13 +6,12 @@ from scipy import stats
 
 
 
-# Load the concentration data from the CSV file
+
 
 data = pd.read_csv('rare_elements.csv')
 
 
 
-# Convert the data to a NumPy array
 
 concentration_data = data['concentration'].values
 
@@ -20,43 +19,31 @@ concentration_data = data['concentration'].values
 
 def calculate_confidence_interval(data, confidence_level, precision):
 
-    # Point estimate (sample mean)
+    
 
     sample_mean = np.mean(data)
 
     
 
-    # Standard error (standard deviation of the sample mean)
-
-    standard_error = np.std(data, ddof=1) / np.sqrt(len(data))
+ standard_error = np.std(data, ddof=1) / np.sqrt(len(data))
 
     
-
-    # Z-value (critical value from the normal distribution for the given confidence level)
 
     z_value = stats.norm.ppf((1 + confidence_level) / 2)
 
     
 
-    # Margin of error
-
     margin_of_error = z_value * standard_error
 
     
 
-    # Confidence interval
-
-    lower_bound = sample_mean - margin_of_error
+  lower_bound = sample_mean - margin_of_error
 
     upper_bound = sample_mean + margin_of_error
 
     
 
-    return sample_mean, lower_bound, upper_bound
-
-
-
-# Get user inputs
+    return sample_mean, lower_bo
 
 sample_size = int(input("Enter the sample size: "))
 
@@ -66,7 +53,7 @@ precision = float(input("Enter the desired level of precision: "))
 
 
 
-# Randomly select a sample from the data
+
 
 if sample_size <= len(concentration_data):
 
