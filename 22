@@ -6,19 +6,16 @@ from scipy import stats
 
 
 
-# Load the customer reviews data from the CSV file
+
 
 data = pd.read_csv('customer_reviews.csv')df
 
-
-
-# Assuming the CSV file has a column named 'rating' containing customer ratings
 
 ratings = data['rating']
 
 
 
-# Calculate the sample mean and standard error
+
 
 mean_rating = ratings.mean()
 
@@ -26,21 +23,13 @@ standard_error = stats.sem(ratings)
 
 
 
-# Get user input for the confidence level
-
-confidence_level = float(input("Enter the confidence level (e.g., 0.95 for 95%): "))
 
 
-
-# Calculate the confidence interval
+confidence_level = float(input("Enter the confidence level (e.g., 0.95 for 95%): 
 
 z_value = stats.norm.ppf((1 + confidence_level) / 2)
 
-margin_of_error = z_value * standard_error
-
-
-
-# Confidence interval bounds
+margin_of_error = z_value * 
 
 lower_bound = mean_rating - margin_of_error
 
@@ -48,7 +37,7 @@ upper_bound = mean_rating + margin_of_error
 
 
 
-# Output the results
+
 
 print(f"Sample Mean Rating: {mean_rating:.2f}")
 
