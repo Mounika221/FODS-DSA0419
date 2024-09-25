@@ -12,7 +12,6 @@ from nltk.tokenize import word_tokenize
 
 
 
-# Load the dataset from a CSV file
 
 def load_data(file_path):
 
@@ -22,23 +21,21 @@ def load_data(file_path):
 
 
 
-# Preprocess the text: lowercase, remove punctuation, and eliminate stopwords
-
 def preprocess_text(text):
 
-    # Convert to lowercase
+    
 
     text = text.lower()
 
-    # Remove punctuation
+    
 
     text = re.sub(r'[^\w\s]', '', text)
 
-    # Tokenize the text into words
+    
 
     words = word_tokenize(text)
 
-    # Remove stopwords
+    
 
     stop_words = set(stopwords.words('english'))
 
@@ -48,7 +45,7 @@ def preprocess_text(text):
 
 
 
-# Calculate the frequency distribution of words
+
 
 def calculate_word_frequency(feedback_list):
 
@@ -64,7 +61,7 @@ def calculate_word_frequency(feedback_list):
 
 
 
-# Display top N most frequent words
+
 
 def display_top_words(word_freq, N):
 
@@ -80,7 +77,7 @@ def display_top_words(word_freq, N):
 
 
 
-# Plot a bar graph of the top N most frequent words
+
 
 def plot_word_frequency(word_freq, N):
 
@@ -102,31 +99,27 @@ def plot_word_frequency(word_freq, N):
 
 
 
-# Main program
+
 
 def main():
 
-    # Load data
+    
 
     file_path = 'data.csv'  # Replace with the path to your CSV file
 
-    feedback_data = load_data(file_path)
-
-    
-
-    # Calculate word frequency
+    feedback_data = 
 
     word_freq = calculate_word_frequency(feedback_data)
 
     
 
-    # Get the number of top words to display from the user
+    
 
     N = int(input("Enter the number of top frequent words to display: "))
 
     
 
-    # Display and plot top N most frequent words
+    
 
     top_words = display_top_words(word_freq, N)
 
@@ -134,7 +127,7 @@ def main():
 
 
 
-# Run the main program
+
 
 if __name__ == '__main__':
 
