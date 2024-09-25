@@ -2,11 +2,11 @@ import string
 
 from collections import Counter
 
-# Function to process the text and calculate word frequency
+
 
 def calculate_word_frequency(file_path):
 
-    # Step 1: Read the text file
+    
 
     with open(file_path, 'r') as file:
 
@@ -14,27 +14,27 @@ def calculate_word_frequency(file_path):
 
     
 
-    # Step 2: Convert text to lowercase and remove punctuation
+    
 
-    text = text.lower()  # Convert to lowercase
+    text = text.lower()  
 
-    text = text.translate(str.maketrans('', '', string.punctuation))  # Remove punctuation
+    text = text.translate(str.maketrans('', '', string.punctuation))  
 
     
 
-    # Step 3: Split the text into words
+    
 
     words = text.split()
 
     
 
-    # Step 4: Calculate word frequency using Counter
+    
 
     word_count = Counter(words)
 
     
 
-    # Step 5: Display the frequency distribution
+    
 
     for word, count in word_count.items():
 
@@ -42,9 +42,8 @@ def calculate_word_frequency(file_path):
 
 
 
-# Example usage
 
-file_path = 'sample_text.txt'  # Replace with the path to your text file
+file_path = 'sample_text.txt' 
 
 calculate_word_frequency(file_path)
 
@@ -58,7 +57,7 @@ import pandas as pd
 
 
 
-# Sample DataFrame representing customer sales data
+
 
 data = {
 
@@ -72,19 +71,19 @@ data = {
 
 
 
-# Create DataFrame
+
 
 df = pd.DataFrame(data)
 
 
 
-# Step 1: Find the frequency distribution of customer ages
+
 
 age_frequency = df['Age'].value_counts()
 
 
 
-# Step 2: Display the frequency distribution
+
 
 print("Frequency distribution of customer ages:")
 
