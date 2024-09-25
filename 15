@@ -12,7 +12,7 @@ data = {
 
 
 
-# Create DataFrame
+
 
 df = pd.DataFrame(data)
 
