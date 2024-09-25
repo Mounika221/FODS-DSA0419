@@ -10,7 +10,6 @@ import scipy.stats as stats
 
 
 
-# Sample data: Age and %Fat of 18 adults
 
 data = {
 
@@ -20,15 +19,11 @@ data = {
 
 }
 
-
-
-# Create a DataFrame
-
 df = pd.DataFrame(data)
 
 
 
-# Calculate mean, median, and standard deviation
+
 
 mean_age = df["Age"].mean()
 
@@ -52,13 +47,11 @@ print("%Fat - Mean:", mean_fat, "Median:", median_fat, "Standard Deviation:", st
 
 
 
-# Boxplots for Age and %Fat
 
 plt.figure(figsize=(10, 5))
 
 
 
-# Boxplot for Age
 
 plt.subplot(1, 2, 1)
 
@@ -68,7 +61,7 @@ plt.title("Boxplot of Age")
 
 
 
-# Boxplot for %Fat
+
 
 plt.subplot(1, 2, 2)
 
@@ -84,7 +77,7 @@ plt.show()
 
 
 
-# Scatter plot of Age vs %Fat
+
 
 plt.figure(figsize=(6, 6))
 
@@ -100,13 +93,13 @@ plt.show()
 
 
 
-# Q-Q plot for Age and %Fat
+
 
 plt.figure(figsize=(12, 6))
 
 
 
-# Q-Q plot for Age
+
 
 plt.subplot(1, 2, 1)
 
@@ -116,7 +109,7 @@ plt.title("Q-Q Plot of Age")
 
 
 
-# Q-Q plot for %Fat
+
 
 plt.subplot(1, 2, 2)
 
